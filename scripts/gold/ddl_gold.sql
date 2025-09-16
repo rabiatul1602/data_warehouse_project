@@ -14,10 +14,6 @@ Usage:
 ===============================================================================
 */
 
--- =============================================================================
--- Create Dimension: gold.dim_customers
--- =============================================================================
-
 CREATE VIEW gold.dim_customers AS
 SELECT 
 ROW_NUMBER() OVER (ORDER BY ci.cst_id) AS customer_key, --GENERATE SURROGATE KEY
