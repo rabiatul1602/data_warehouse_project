@@ -26,7 +26,7 @@ This project focuses on building a **modern data warehouse** with a robust archi
 - **Database**: SQL-based Data Warehouse  
 - **ETL**: Stored Procedures, Batch Processing  
 - **Architecture**: Medallion (Bronze, Silver, Gold)  
-- **Analytics**: SQL Reporting, Dashboards  
+- **Analytics**: SQL Reporting  
 
 ---
 
