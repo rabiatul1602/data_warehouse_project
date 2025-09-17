@@ -23,7 +23,7 @@ This project focuses on building a **modern data warehouse** with a robust archi
 ---
 
 ## 📂 Tech Stack  
-- **Database**: SQL-based Data Warehouse  
+- **Database**: SQL-based Data Warehouse: PostgreSQL
 - **ETL**: Stored Procedures, Batch Processing  
 - **Architecture**: Medallion (Bronze, Silver, Gold)  
 - **Analytics**: SQL Reporting  
