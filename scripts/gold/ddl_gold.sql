@@ -14,6 +14,11 @@ Usage:
 ===============================================================================
 */
 
+SELECT * FROM gold.dim_products;
+SELECT * FROM gold.dim_customers;
+SELECT * FROM gold.fact_sales;
+
+DROP VIEW IF EXISTS gold.dim_customers CASCADE;
 CREATE VIEW gold.dim_customers AS
 SELECT 
 ROW_NUMBER() OVER (ORDER BY ci.cst_id) AS customer_key, --GENERATE SURROGATE KEY
@@ -33,6 +38,7 @@ LEFT JOIN silver.erp_loc_a101 la ON TRIM(ci.cst_key) = TRIM(la.cid);
 
 
 --SELECT CURRENT DATA
+DROP VIEW IF EXISTS gold.dim_products CASCADE;
 CREATE VIEW gold.dim_products AS
 SELECT ROW_NUMBER() OVER (ORDER BY prd_start_dt,prd_key) AS product_key,
 prd_id AS product_id,
@@ -47,12 +53,9 @@ prd_line AS product_line,
 prd_start_dt AS start_date
 FROM silver.crm_prd_info pi
 LEFT JOIN silver.erp_px_cat_g1v2 pc ON TRIM(pi.cat_id) = TRIM(pc.id)
-WHERE prd_end_dt IS NULL
+WHERE prd_end_dt IS NULL;
 
-SELECT * FROM gold.dim_products;
-SELECT * FROM gold.dim_customers;
-SELECT * FROM gold.fact_sales;
-
+DROP VIEW IF EXISTS gold.fact_sales CASCADE;
 CREATE VIEW gold.fact_sales AS
 SELECT 
 sls_ord_num AS order_number,
@@ -66,20 +69,9 @@ sls_quantity AS quantity,
 sls_price AS price
 FROM silver.crm_sales_details sd
 LEFT JOIN gold.dim_products dp ON sd.sls_prd_key = dp.product_number
-LEFT JOIN gold.dim_customers dc ON sd.sls_cust_id = dc.customer_id
+LEFT JOIN gold.dim_customers dc ON sd.sls_cust_id = dc.customer_id;
 
---Foregin key Integrity (Dimensions)
-SELECT *
-FROM gold.fact_sales a
-LEFT JOIN gold.dim_customers b
-ON a.customer_key = b.customer_key
-LEFT JOIN gold.dim_products c
-ON a.product_key = c.product_key
-WHERE a.product_key IS NULL
 
-SELECT order_number, count(*)
-FROM gold.fact_sales
-GROUP BY order_number
-HAVING count(*) > 1
+
 
 
