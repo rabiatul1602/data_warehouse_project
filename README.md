@@ -46,4 +46,4 @@ This project focuses on building a **modern data warehouse** with a robust archi
 
 ---
 
-docs link: https://drive.google.com/file/d/1UI4Ik3qDkL717WknRxDTgy3OhnQsji8p/view?usp=sharing
+docs link: [https://drive.google.com/file/d/1UI4Ik3qDkL717WknRxDTgy3OhnQsji8p/view?usp=sharing](https://app.diagrams.net/?src=about#G1UI4Ik3qDkL717WknRxDTgy3OhnQsji8p#%7B%22pageId%22%3A%225Hkbf4WqOJsOZFGJDqHU%22%7D)
