@@ -45,3 +45,5 @@ This project focuses on building a **modern data warehouse** with a robust archi
 - Integrate advanced analytics & ML models  
 
 ---
+
+docs link: https://drive.google.com/file/d/1UI4Ik3qDkL717WknRxDTgy3OhnQsji8p/view?usp=sharing
