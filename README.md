@@ -1,7 +1,8 @@
 # 📊 Modern Data Warehouse Project
 
 ## 🚀 Project Overview  
-This project focuses on building a **modern data warehouse** with a robust architecture and end-to-end data pipeline.  
+This project focuses on building a **modern data warehouse** with a robust architecture and end-to-end data pipeline. 
+This project dedicated to support daily position data with small to medium storage size, with minimal user access. 
 
 ### 🔹 Key Components  
 
@@ -40,7 +41,7 @@ This project focuses on building a **modern data warehouse** with a robust archi
 
 ## 📌 Future Improvements  
 - Automate batch scheduling with orchestration tools (e.g., SQL Agent, Airflow, Cron)  
-- Implement real-time streaming pipelines  
+- Implement real-time streaming pipelines
 - Add automated data quality validation & monitoring  
 - Integrate advanced analytics & ML models  
 
